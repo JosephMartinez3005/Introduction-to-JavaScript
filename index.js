@@ -17,8 +17,13 @@ Do the following:
 
    HINT: no function required
 */
-
-
+ 
+let votingAge = 18;
+if(age >= votingAge){
+  console.log("You are old enough to vote");
+}else{
+  console.log("Wait a few years")
+}
 
 /*
 Task 1b - Values
@@ -30,7 +35,10 @@ Do the following:
 
    HINT: no function required
 */
-
+let a = 6;
+let b = 3;
+a = b;
+console.log(a);
 
 
 
@@ -45,6 +53,10 @@ Do the following:
 
    HINT: look up the Number method
 */
+let john = "1999";
+let dob = Number(john);
+console.log(dob);
+
 
 
 
@@ -57,10 +69,10 @@ Do the following:
    2. Receive the numbers in the parameters: a and b
    3. Multiply a and b and return the answer
 */
-
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){ 
+  return a * b;
   }
+  console.log(multiply(12,5));
 
 
 
@@ -74,9 +86,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+  return "Your dog is "+ age * 7 +" years old"
 }
+
+console.log(dogYears(2));
 
 
 
@@ -89,7 +103,7 @@ Use the hungryDog function and feeding requirements below to do the following:
   2. Also, pass to hungryDog an age value in years (note: if the dog is a puppy, the age will be a decimal. For example: three months = 3/12 or .25)
   3. Do the proper calculations and return the number of pounds of raw food to feed the dog/puppy in a day
   
-  REMEMBER: This program should handle correctly adult AND puppy ages and weights
+  REMEMBER: This program should handle correctly adult AND puppy ages and weights 
   
   Feeding Requirements:
 
