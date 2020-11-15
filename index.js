@@ -107,7 +107,7 @@ Use the hungryDog function and feeding requirements below to do the following:
   
   Feeding Requirements:
 
-  Adult Dogs 1 year and older 
+  Adult Dogs 1 year and older    
      up to 5 lbs - 5% of their body weight
      6 - 10 lbs - 4% of their body weight 
      11 - 15 lbs - 3% of their body weight 
@@ -121,9 +121,27 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(age, weight){
+  if(age >= 1){
+     if(weight <= 5){
+       return weight * 0.05;
+     }else if (weight >= 6 || weight <= 10){
+       return weight * 0.04;
+     }else if (weight >= 11 || weight <= 15){
+       return weight * 0.03;
+     }else{
+       return weight * 0.02;
+     }
+ }else{
+     if (age >= 2/12 || age <= 4){
+       return weight * 0.10;
+     }else if (age > 4/12 || age <= 7/12){
+       return weight * 0.05;
+     }else if (age > 7/12 || age <= 12/12){
+       return weight * 0.04;
+     }
   }
+}
 
 
 
@@ -146,9 +164,41 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
+let choice =["Rock", "Paper", "Scissors"];
+let random = choice[Math.round(Math.random()* 2)];
+
 function game(user, computer){
-    /*add your code here*/
+  if(user == "Rock"){
+    if(random === "Scissors"){
+      return "You won " + user +" beats Scissors!"
+    }else if(random === "Rock"){
+      return "You Tied!"
+    }else{
+      return "You lost " +random+ " beats rock."
+    }
+  }
+  else if(user === "Paper"){
+    if(random === "Scissors"){
+      return "You lost "+ random+ " beats Paper."
+    }else if (random === "Rock"){
+      return " You Won!"
+    }else{
+      return "You Tied!"
+    }
+  }
+  else if(user === "Scissors"){
+    if(random === "Rock"){
+      return "You Lose!"
+    }else if(random === "Paper"){
+      return "You Win!"
+    }else {
+      return "You Tied!"
+    }
+  }
 }
+  
+
+  console.log(game("Scissors", random))
   
   
 
@@ -163,10 +213,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+  miles = km * 0.621371;
+  return miles;
   }
-
 
 
 //Task 5b - Feet to CM
@@ -176,9 +226,9 @@ Using the feet function below do the following:
   2. Convert the number of cm to feet
   3. Return number of feet
 */
-
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cm){
+  feet = cm * 0.0328084;
+  return feet;
   }
  
 
@@ -193,10 +243,14 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
 
+function annoyingSong(number){
+
+  for(let i = number; i > 0; i-- ){
+    let m = i -1;
+    console.log( i+" bottles of soda on the wall, "+i+" bottles of soda, take one down pass it around "+m+" bottles of soda on the wall")
+    }
+  }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -213,8 +267,18 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(score){
+    if(score >= 90 || score <= 100){
+      return "A"
+    }else if (score >= 80 || score <= 89){
+      return "B"
+    }else if (score >= 70 || score <= 79){
+      return "C"
+    }else if (score >= 60 || score <= 69){
+      return "D"
+    }else if (score <= 60){
+      return "F"
+    }
   }
   
   
